@@ -549,6 +549,53 @@ fieldset.field{border:0;margin:0;padding:0;min-width:0}
 .pol .pol-sec:last-child{border-bottom:0}
 .pol .pol-sec > h2{font-size:30px;margin:24px 0 8px}
 .pol .pol-sec h3{font-size:21px;margin:26px 0 8px}
+
+/* ---- intake quiz ---- */
+.quiz-card{width:min(760px,100%);background:var(--bg);color:var(--ink);border-radius:22px;padding:clamp(20px,3.5vw,32px);text-align:left;box-shadow:0 24px 50px -24px rgba(0,0,0,.55);display:grid;gap:14px;margin-top:6px}
+.quiz-card fieldset{border:0;margin:0;padding:0;min-width:0;display:grid;gap:12px}
+.qprogress{height:6px;border-radius:999px;background:var(--line);overflow:hidden}
+.qprogress span{display:block;height:100%;background:var(--red);border-radius:999px;transition:width .3s var(--ease)}
+.qstep{font:700 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.qtitle{font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:600;line-height:1.15;color:var(--ink);padding:0}
+.qhint{color:var(--muted);font-size:15px;margin-top:-4px}
+.qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.qgrid-3{grid-template-columns:repeat(3,1fr)}
+.qgrid-4{grid-template-columns:repeat(4,1fr)}
+.qopt{position:relative;display:block;cursor:pointer}
+.qopt input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.qopt span{display:flex;align-items:center;min-height:52px;padding:10px 16px;border:1.5px solid var(--line);border-radius:14px;font-weight:600;font-size:15px;line-height:1.3;background:var(--bg);transition:border-color .15s,background .15s}
+.qopt:hover span{border-color:var(--ink)}
+.qopt input:checked + span{border-color:var(--green);background:var(--green-tint);color:var(--green)}
+.qopt input:checked + span::before{content:"";width:9px;height:15px;border-right:3px solid currentColor;border-bottom:3px solid currentColor;transform:rotate(45deg) translateY(-2px);margin-right:12px;flex:none}
+.qopt input:focus-visible + span{outline:3px solid var(--green);outline-offset:2px}
+.qnav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.qnav-right{display:flex;align-items:center;gap:16px;margin-left:auto}
+.qskip{color:var(--ink-2) !important}
+.qsub{font:700 13px/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.qmatches{display:flex;flex-wrap:wrap;gap:8px}
+.qchip{font-size:14px;padding:8px 14px;text-decoration:none;min-height:40px;display:inline-flex;align-items:center}
+.qchip:hover{background:var(--green);color:#fff}
+.qpros{display:grid;gap:10px}
+.qpro{display:flex;gap:12px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--ink)}
+.qpro:hover{border-color:var(--ink)}
+.qpro .photo{width:56px;height:56px;border-radius:12px;flex:none;position:relative}
+.qpro .mono{font-size:20px}
+.qpro small{display:block;color:var(--muted)}
+.qnone{background:var(--bg-alt);border-radius:12px;padding:14px 16px;color:var(--ink-2)}
+.qcta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:6px}
+.link-dark{font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.qfine{font-size:14px;color:var(--muted)}
+.quiz-results .qtitle{font-size:clamp(22px,2.8vw,30px)}
+@media (max-width:620px){.qgrid,.qgrid-3,.qgrid-4{grid-template-columns:1fr 1fr}.qgrid{grid-template-columns:1fr}.qnav .btn-lg{min-height:50px;padding:0 22px}}
+/* quiz fits on one screen */
+.hero.has-quiz{min-height:0}
+.hero.has-quiz .hero-inner{padding-block:clamp(18px,2.4vw,32px) clamp(28px,4vw,48px);gap:12px;max-width:1120px;width:100%}
+#quizBox{width:100%;display:grid;justify-items:center}
+.hero .quiz-card{width:min(1040px,100%);gap:12px;padding:clamp(18px,2.6vw,28px) clamp(18px,3vw,32px)}
+.hero .quiz-card .qgrid{grid-template-columns:repeat(4,1fr);gap:8px}
+.hero .quiz-card .qopt span{min-height:44px;padding:6px 14px}
+@media (max-width:900px){.hero .quiz-card .qgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.hero.has-quiz .hero-inner{padding-block:12px 24px;gap:10px}.hero.has-quiz h1{font-size:26px}.hero.has-quiz p.lead{display:none}.hero .quiz-card{padding:14px;gap:10px}.hero .quiz-card .qtitle{font-size:22px}.hero .quiz-card .qgrid,.hero .quiz-card .qgrid-4{grid-template-columns:1fr 1fr;gap:6px}.hero .quiz-card .qopt span{font-size:13.5px;padding:6px 10px;min-height:40px;border-radius:12px}}
 .view{animation:fade .35s var(--ease)}
 @keyframes fade{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -698,7 +745,7 @@ fieldset.field{border:0;margin:0;padding:0;min-width:0}
       </ul></div>
       <div><h2 class="h4">Professionals</h2><ul>
         <li><a href="#join">List your practice</a></li>
-        <li><a href="#plans">Plans &amp; fees</a></li>
+        <li><a href="#plans">Practitioner plans &amp; fees</a></li>
         <li><a href="#faq">Questions</a></li>
         <li><a href="#dashboard">Practitioner dashboard</a></li>
       </ul></div>
@@ -756,8 +803,8 @@ window.SHOW_WELL_CONFIG = {
    ========================================================= */
 const CFG = window.SHOW_WELL_CONFIG || {};
 const BIZ = CFG.business || {};
-const TERMS_VERSION = '2026-11-04';
-const UPDATED = 'November 5, 2026';
+const TERMS_VERSION = '2026-11-07';
+const UPDATED = 'November 7, 2026';
 const sb = (CFG.supabaseUrl && CFG.supabaseAnonKey && window.supabase && window.supabase.createClient)
   ? window.supabase.createClient(CFG.supabaseUrl, CFG.supabaseAnonKey) : null;
 const LIVE = !!sb;
@@ -910,6 +957,152 @@ document.addEventListener('click', e=>{
   track('click', (zone ? zone.dataset.zone + ' › ' : '') + label);
 }, true);
 
+
+/* ---------- INTAKE QUIZ (signed-out homepage) ----------
+   4 questions -> matched wellness types, professions and practitioners.
+   Results are free. Answers are saved only if the visitor creates an account
+   (sent with sign-up); otherwise only anonymous daily totals are counted. */
+const INTERESTS = [
+  {key:'strength', label:'Get stronger or fitter', profs:{'personal-trainer':3,'strength-coach':3,'group-fitness':1}},
+  {key:'weight', label:'Lose weight or eat better', profs:{'dietitian':3,'personal-trainer':2,'group-fitness':1}},
+  {key:'mobility', label:'Flexibility, posture or aches', profs:{'yoga-teacher':3,'pilates-instructor':3,'massage-therapist':2,'ergonomics':1}},
+  {key:'recovery', label:'Recover from an injury', profs:{'physical-therapist':3,'massage-therapist':2,'pilates-instructor':1}},
+  {key:'stress', label:'Stress, anxiety or low mood', profs:{'counselor':3,'therapist':3,'meditation-teacher':2,'breathwork-coach':1}},
+  {key:'sleep', label:'Sleep better', profs:{'meditation-teacher':2,'breathwork-coach':2,'mindfulness-teacher':2,'counselor':1}},
+  {key:'relationships', label:'Relationships', profs:{'relationship-coach':3,'therapist':2,'counselor':1}},
+  {key:'community', label:'Feel more connected', profs:{'group-fitness':3,'support-group':3,'relationship-coach':1}},
+  {key:'purpose', label:'Purpose or spiritual growth', profs:{'meditation-teacher':3,'reiki':2,'breathwork-coach':2,'life-coach':2}},
+  {key:'focus', label:'Focus, learning or ADHD', profs:{'learning-coach':3,'mindfulness-teacher':2}},
+  {key:'career', label:'Career or work-life balance', profs:{'career-coach':3,'life-coach':2,'workplace-wellness':2}},
+  {key:'home', label:'A healthier home or workspace', profs:{'home-organizer':3,'ergonomics':3,'nature-therapy':2}}
+];
+const interestName = k => (INTERESTS.find(i=>i.key===k)||{}).label || goalName(k);
+const MEET = [['in-person','In person'],['online','Online'],['either','Either is fine']];
+const BUDGET = [['under-60','Under $60'],['60-100','$60–$100'],['over-100','Over $100'],['not-sure','Not sure yet']];
+const budgetMax = b => ({'under-60':60,'60-100':100}[b] || Infinity);
+let Q = {step:0, interests:[], meet:'', city:'', budget:'', started:false, done:false};
+let quizForSignup = null;   // answers to save if the visitor creates an account
+
+function quizScores(){
+  const scores={};
+  Q.interests.forEach(k=>{ const it=INTERESTS.find(i=>i.key===k); if(!it) return;
+    Object.entries(it.profs).forEach(([pk,w])=>{ scores[pk]=(scores[pk]||0)+w; }); });
+  const profs = Object.entries(scores).sort((a,b)=>b[1]-a[1]).map(([k])=>k);
+  const dims = []; profs.forEach(pk=>{ const d=(PROFS.find(x=>x.key===pk)||{}).dim; if(d && !dims.includes(d)) dims.push(d); });
+  return {profs, dims};
+}
+function quizPros(profs){
+  const max=budgetMax(Q.budget);
+  return PROS.filter(p=>!p.example || !LIVE)
+    .filter(p=>profs.includes(p.prof))
+    .filter(p=> Q.meet==='online' ? p.mode.includes('online')
+              : Q.meet==='in-person' ? (p.mode.includes('in-person') && (!Q.city || p.city===Q.city || p.areas.includes(Q.city)))
+              : (p.mode.includes('online') || !Q.city || p.city===Q.city || p.areas.includes(Q.city)))
+    .filter(p=>p.price<=max)
+    .sort((a,b)=>profs.indexOf(a.prof)-profs.indexOf(b.prof))
+    .slice(0,3);
+}
+const QUIZ_STEPS = ['What would you like to work on?','How would you like to meet?','Where do you live?','What\'s your budget per session?'];
+function quizCard(){
+  if(Q.done) return quizResults();
+  const n=Q.step, total=QUIZ_STEPS.length;
+  const opt = (name,val,label,checked,type='radio') => `<label class="qopt"><input type="${type}" name="${name}" value="${val}" ${checked?'checked':''}><span>${esc(label)}</span></label>`;
+  let body='';
+  if(n===0) body = `<p class="qhint" id="qhint">Choose up to 3.</p><div class="qgrid">${INTERESTS.map(i=>opt('qi',i.key,i.label,Q.interests.includes(i.key),'checkbox')).join('')}</div>`;
+  if(n===1) body = `<div class="qgrid qgrid-3">${MEET.map(([v,l])=>opt('qm',v,l,Q.meet===v)).join('')}</div>`;
+  if(n===2) body = `<div class="field" style="max-width:360px;margin-inline:auto"><label class="sr" for="qcity">Your city</label><select id="qcity">${cityOptions(Q.city,'Choose your city')}</select></div>
+                    <p class="qhint">${Q.meet==='online'?'Optional, since you chose online.':'Optional, but it helps us show pros near you.'}</p>`;
+  if(n===3) body = `<div class="qgrid qgrid-4">${BUDGET.map(([v,l])=>opt('qb',v,l,Q.budget===v)).join('')}</div>`;
+  return `<form class="quiz-card" id="quizForm" novalidate aria-labelledby="qTitle">
+    <div class="qprogress" aria-hidden="true"><span style="width:${Math.round((n+1)/total*100)}%"></span></div>
+    <p class="qstep">Question ${n+1} of ${total}</p>
+    <fieldset><legend id="qTitle" class="qtitle" tabindex="-1">${QUIZ_STEPS[n]}</legend>${body}</fieldset>
+    <p class="error" id="qErr" role="alert" hidden></p>
+    <div class="qnav">
+      ${n>0?`<button class="btn btn-ghost" type="button" id="qBack">Back</button>`:'<span></span>'}
+      <span class="qnav-right">${n===2?`<button class="linkbtn qskip" type="button" id="qSkip">Skip</button>`:''}<button class="btn btn-red btn-lg" type="submit">${n===total-1?'See my matches':'Next'}</button></span>
+    </div>
+  </form>`;
+}
+function quizResults(){
+  const {profs, dims} = quizScores();
+  const topProfs = profs.slice(0,4), pros = quizPros(profs.slice(0,6));
+  const where = Q.meet==='online' ? 'online' : Q.city ? `in or near ${esc(Q.city)}` : 'in the Twin Cities';
+  return `<div class="quiz-card quiz-results" aria-labelledby="qrTitle">
+    <p class="qstep">Your matches</p>
+    <h2 id="qrTitle" class="qtitle" tabindex="-1">${dims.slice(0,2).map(d=>esc(dimName(d))).join(' &amp; ')} wellness looks like the best fit</h2>
+    <p class="qhint">Based on: ${Q.interests.map(k=>esc(interestName(k))).join(', ')}.</p>
+    <h3 class="qsub">Professionals to look for</h3>
+    <div class="qmatches">${topProfs.map(pk=>`<a class="chip qchip" href="#find-${pk}">${esc(profName(pk))}</a>`).join('')}</div>
+    <h3 class="qsub">Practitioners ${where}${Q.budget && Q.budget!=='not-sure' ? ` within your budget` : ''}</h3>
+    ${pros.length ? `<div class="qpros">${pros.map(p=>`<a class="qpro" href="#pro-${esc(p.id)}" data-track="Quiz match">${pic(p)}<span><b>${esc(p.name)}</b><small>${esc(p.role)} · $${p.price}/session</small></span></a>`).join('')}</div>`
+      : `<p class="qnone">We're still onboarding practitioners for these matches. New pros are being reviewed now.</p>`}
+    <div class="qcta">
+      ${user ? `<a class="btn btn-red btn-lg" href="#find-${topProfs[0]||''}">See all ${esc(profName(topProfs[0]||'').toLowerCase())}</a>`
+             : `<button class="btn btn-red btn-lg" type="button" id="qSave">Save my matches, free</button>`}
+      <a class="link-dark" href="#find-${topProfs[0]||''}">Browse without an account</a>
+    </div>
+    ${user ? '' : `<p class="qfine">A free account saves your answers, so we can show you matching practitioners first and you can request a session in one click. No payment details needed.</p>`}
+    <p style="margin-top:8px"><button class="linkbtn" type="button" id="qRestart">Start over</button></p>
+  </div>`;
+}
+function bindQuiz(){
+  const box=document.getElementById('quizBox'); if(!box) return;
+  const render = (focusId) => { box.innerHTML = quizCard(); wireQuiz(); const f=document.getElementById(focusId||(Q.done?'qrTitle':'qTitle')); if(f && Q.started){ f.focus({preventScroll:true}); const c=box.firstElementChild.getBoundingClientRect(), hd=document.querySelector('.site-header').offsetHeight; if(c.bottom>innerHeight || c.top<hd) scrollTo({top:Math.max(0,c.top+scrollY-hd-12),behavior:'instant'}); } };
+  function wireQuiz(){
+    const form=document.getElementById('quizForm');
+    if(form){
+      const err=document.getElementById('qErr'); const showErr=t=>{ err.textContent=t; err.hidden=false; };
+      form.addEventListener('change', e=>{
+        if(!Q.started){ Q.started=true; track('funnel','Q1 Started quiz'); }
+        if(e.target.name==='qi'){
+          const picked=[...form.querySelectorAll('input[name=qi]:checked')].map(x=>x.value);
+          if(picked.length>3){ e.target.checked=false; return showErr('Choose up to 3. Unselect one to pick another.'); }
+          Q.interests=picked; err.hidden=true;
+        }
+        if(e.target.name==='qm'){ Q.meet=e.target.value; err.hidden=true; }
+        if(e.target.name==='qb'){ Q.budget=e.target.value; err.hidden=true; }
+        if(e.target.id==='qcity') Q.city=e.target.value;
+      });
+      form.addEventListener('submit', e=>{
+        e.preventDefault();
+        if(Q.step===0 && !Q.interests.length) return showErr('Choose at least one thing you\'d like to work on.');
+        if(Q.step===1 && !Q.meet) return showErr('Choose how you\'d like to meet.');
+        if(Q.step===3 && !Q.budget) return showErr('Choose a budget, or "Not sure yet".');
+        if(!Q.started){ Q.started=true; track('funnel','Q1 Started quiz'); }
+        if(Q.step===1 && Q.meet==='online') Q.step++;          // city not needed for online-only
+        if(Q.step<3){ Q.step++; return render(); }
+        Q.done=true; finishQuiz(); render();
+      });
+      const back=document.getElementById('qBack'); if(back) back.addEventListener('click',()=>{ Q.step = (Q.step===3 && Q.meet==='online') ? 1 : Q.step-1; render(); });
+      const skip=document.getElementById('qSkip'); if(skip) skip.addEventListener('click',()=>{ Q.city=''; Q.step=3; render(); });
+    }
+    const save=document.getElementById('qSave'); if(save) save.addEventListener('click',()=>{
+      quizForSignup = {interests:Q.interests.slice(), preferred_mode:Q.meet, budget:Q.budget, location:Q.city};
+      openAuth('signup','Create a free account to save your matches. Your quiz answers will be saved to your profile.');
+    });
+    const again=document.getElementById('qRestart'); if(again) again.addEventListener('click',()=>{ Q={step:0, interests:[], meet:'', city:'', budget:'', started:true, done:false}; render(); });
+  }
+  wireQuiz();
+}
+function finishQuiz(){
+  track('funnel','Q2 Finished quiz');
+  if(!LIVE) return;
+  const answers=[...Q.interests.map(a=>({q:'interest',a})), {q:'meet',a:Q.meet}, ...(Q.city?[{q:'city',a:Q.city}]:[]), {q:'budget',a:Q.budget}];
+  sb.rpc('track_quiz',{p_answers:answers}).then(()=>{},()=>{});
+}
+/* After logging in (instead of signing up) from the quiz, save the answers to the profile */
+async function saveQuizToProfile(){
+  if(!quizForSignup || !user || isPro()) return;
+  const a=quizForSignup; quizForSignup=null;
+  const row={wellness_interests:a.interests, preferred_mode:a.preferred_mode||null, budget:a.budget||null};
+  if(a.location) row.location=a.location;
+  await sb.from('profiles').update(row).eq('id', user.id);
+  if(a.location) myCity=a.location;
+  const top=quizScores().profs[0];
+  if(top && /^#(home)?$/.test(location.hash||'')){ pendingLoc = a.preferred_mode==='online' ? 'online' : (a.location||'any'); location.hash='#find-'+top; }
+}
+
 /* ---------- HOME ---------- */
 function proCard(p){
   return `<a class="card" href="#pro-${esc(p.id)}" data-track="Practitioner card" aria-label="${esc(p.name)}, ${esc(p.role)}, ${esc(where(p))}, $${p.price} per session${p.example?', example profile':''}">
@@ -924,18 +1117,19 @@ function proCard(p){
 function featuredPros(){ const f = PROS.filter(p=>p.featured); return (f.length ? f : PROS).slice(0,4); }
 function home(){
   return `
-  <section class="hero" aria-labelledby="heroTitle" data-zone="Hero">
+  <section class="hero${!user?' has-quiz':''}" aria-labelledby="heroTitle" data-zone="Hero">
     ${block('', '')}
     <div class="wrap hero-inner">
       <h1 id="heroTitle" tabindex="-1">Find wellness pros in the <span class="nw">Twin Cities</span></h1>
-      <p class="lead">Trainers, yoga teachers, dietitians, counselors and more.<br class="br-wide"> Free to search and book.</p>
+      ${!user ? `<p class="lead">Not sure where to start? Answer 4 quick questions and we'll match you with the right kind of professional.</p>
+      <div id="quizBox" data-zone="Quiz">${quizCard()}</div>` : `<p class="lead">Trainers, yoga teachers, dietitians, counselors and more.<br class="br-wide"> Free to search and book.</p>
       <form class="search" id="heroSearch" role="search" aria-label="Find a practitioner">
         <label for="hsSvc"><span>Looking for</span>
           <select id="hsSvc"><option value="all">Any type of wellness</option>${profOptions('', true)}</select></label>
         <label for="hsWhere"><span>Where</span>
           <select id="hsWhere">${locOptions('any')}</select></label>
         <button class="btn btn-red btn-lg" type="submit">${ic('search')}Search</button>
-      </form>
+      </form>`}
       <p class="hero-tag">The right trainer<span class="dot" aria-hidden="true">.</span> The right fit<span class="dot" aria-hidden="true">.</span> Hassle free<span class="dot" aria-hidden="true">.</span></p>
       <div class="ctas"><a class="link-u" href="#pros">Are you a wellness professional? List your practice</a></div>
     </div>
@@ -988,7 +1182,7 @@ function home(){
         <li><b>Add your credentials and insurance.</b> Documents stay private. We check them with the issuing organization.</li>
         <li><b>Submit for review.</b> We'll email you when your listing is approved and live.</li>
       </ol>
-      <p style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-red btn-lg" type="button" data-auth="signup-pro">Create a practitioner account</button></p>
+      <p style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-red btn-lg" type="button" data-auth="signup-pro">Create a practitioner account</button><a class="btn btn-ghost btn-lg" href="#plans">See plans &amp; fees</a></p>
     </div>
     <div id="faq">
       <h3 class="h4" style="margin-bottom:8px">Questions</h3>
@@ -1002,7 +1196,7 @@ function home(){
     </div>
     </div>
   </div></section>
-  <section class="block alt pro-zone pro-plans" id="plans" aria-labelledby="plansTitle" data-zone="Plans"><div class="wrap">
+  ${/^#(pros|join|plans|faq)/.test(location.hash) ? `<section class="block alt pro-zone pro-plans" id="plans" aria-labelledby="plansTitle" data-zone="Plans"><div class="wrap">
     <div class="sec-head"><div><p class="eyebrow">Plans &amp; fees</p><h2 id="plansTitle" style="margin-top:12px">Free to list. Pay only when you're booked.</h2>
       <p>Prices in US dollars. No setup fees and no contracts. Change or cancel your plan anytime. Clients never pay Show &amp; Well a fee.</p></div></div>
     <div class="plans">
@@ -1014,7 +1208,7 @@ function home(){
         <a class="btn btn-green" href="#join">Choose Pro</a></div>
     </div>
     <p class="fine" style="text-align:left;margin-top:14px">Fees apply only to completed sessions. Nothing is charged for cancelled or declined requests. Full details are in the <a href="#policies-terms">Terms of Service</a>.</p>
-  </div></section>`;
+  </div></section>` : ''}`;
 }
 
 /* ---------- FIND ---------- */
@@ -1437,7 +1631,7 @@ function dashHTML(){
     ${!D.reqs.length?'<p>No requests yet.</p>':`<div class="tbl"><table class="svc"><thead><tr><th scope="col">When</th><th scope="col">Client</th><th scope="col">Session</th><th scope="col">Status</th><th scope="col"><span class="sr">Actions</span></th></tr></thead><tbody>
       ${D.reqs.map(r=>`<tr><td>${esc(fmtWhen(r.starts_at))}</td>
         <td><b>${esc(r.client_first_name||'Client')}</b><small>${esc(r.client_email||'')}</small>${r.client_home_city?`<small>${esc(r.client_home_city)}</small>`:''}
-          ${(r.client_goals||[]).length?`<small>Goals: ${r.client_goals.map(g=>esc(goalName(g))).join(', ')}</small>`:''}
+          ${(r.client_goals||[]).length?`<small>Working on: ${r.client_goals.map(g=>esc(interestName(g))).join(', ')}</small>`:''}
           ${r.client_note?`<small class="cnote">“${esc(r.client_note)}”</small>`:''}</td>
         <td>${esc(r.service_name)}<small>${r.session_mode==='online'?'Online':'In person'} · ${money(Math.round(r.price_cents/100))}</small></td>
         <td><span class="chip">${esc(((r.status||'requested')[0].toUpperCase())+(r.status||'requested').slice(1))}</span></td>
@@ -1684,10 +1878,12 @@ function account(){
     ${isPro()?`<p class="note" style="margin-top:12px">Manage your listing, hours and requests in your <a href="#dashboard">practitioner dashboard</a>.</p>`:''}
     ${isPro()?'':`<section class="prof-sec"><h2 id="acBook">My booking requests</h2><div id="myBookings"><p class="loading">Loading…</p></div></section>
     <section class="prof-sec" aria-labelledby="prefTitle"><h2 id="prefTitle">My preferences <span class="muted" style="font-family:var(--sans);font-size:16px;font-weight:500">(optional)</span></h2>
-      <p>These help us show practitioners near you. Your goals are shared only with practitioners you send a booking request to. You can clear them at any time.</p>
+      <p>These help us show matching practitioners near you first. What you're working on is shared only with practitioners you send a booking request to. You can change or clear these at any time.</p>
       <form id="prefForm" class="stack" novalidate style="max-width:640px">
         <div class="field" style="max-width:340px"><label class="lbl" for="pref-city">Home city</label><select id="pref-city"></select></div>
-        <fieldset><legend class="lbl">What are you working on?</legend><div class="area-grid">${GOALS.map(([k,l])=>`<label class="check"><input type="checkbox" name="pref-goal" value="${k}"> ${l}</label>`).join('')}</div></fieldset>
+        <fieldset><legend class="lbl">What are you working on?</legend><div class="area-grid">${INTERESTS.map(i=>`<label class="check"><input type="checkbox" name="pref-goal" value="${i.key}"> ${esc(i.label)}</label>`).join('')}</div></fieldset>
+        <div class="two"><div class="field"><label class="lbl" for="pref-meet">How you'd like to meet</label><select id="pref-meet"><option value="">Prefer not to say</option>${MEET.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select></div>
+        <div class="field"><label class="lbl" for="pref-budget">Budget per session</label><select id="pref-budget"><option value="">Prefer not to say</option>${BUDGET.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select></div></div>
         <p><button class="btn btn-red" type="submit">Save preferences</button></p><p id="pref-msg" role="status" hidden></p>
       </form></section>`}
     <section class="prof-sec"><h2 id="acData">Your data</h2>
@@ -1711,13 +1907,14 @@ async function bindAccount(){
   jumpPending();
   if(isPro()) return;
   const pf=document.getElementById('prefForm');
-  const {data:me} = await sb.from('profiles').select('location, wellness_goals').eq('id', user.id).maybeSingle();
+  const {data:me} = await sb.from('profiles').select('location, wellness_interests, preferred_mode, budget').eq('id', user.id).maybeSingle();
   document.getElementById('pref-city').innerHTML = cityOptions((me||{}).location||'', 'Prefer not to say');
-  ((me||{}).wellness_goals||[]).forEach(g=>{ const c=pf.querySelector(`input[value="${g}"]`); if(c) c.checked=true; });
+  ((me||{}).wellness_interests||[]).forEach(g=>{ const c=pf.querySelector(`input[value="${g}"]`); if(c) c.checked=true; });
+  document.getElementById('pref-meet').value=(me||{}).preferred_mode||''; document.getElementById('pref-budget').value=(me||{}).budget||'';
   pf.addEventListener('submit', async e=>{
     e.preventDefault();
-    const location=document.getElementById('pref-city').value||null, wellness_goals=[...pf.querySelectorAll('input[name=pref-goal]:checked')].map(x=>x.value);
-    const {error}=await sb.from('profiles').update({location, wellness_goals}).eq('id', user.id);
+    const location=document.getElementById('pref-city').value||null, wellness_interests=[...pf.querySelectorAll('input[name=pref-goal]:checked')].map(x=>x.value);
+    const {error}=await sb.from('profiles').update({location, wellness_interests, preferred_mode:document.getElementById('pref-meet').value||null, budget:document.getElementById('pref-budget').value||null}).eq('id', user.id);
     if(error){ console.error(error); return say('pref-msg','Your preferences couldn\'t be saved. Try again.','error'); }
     myCity = location||''; say('pref-msg','Preferences saved.');
   });
@@ -1845,7 +2042,7 @@ function privacyPage(){ return legalWrap('Privacy Policy', `${updated()}${review
 <p><b>From clients</b></p>
 <ul>
 <li><b>Home city</b> (optional), chosen from our Twin Cities list, so we can show practitioners near you first.</li>
-<li><b>Wellness goals</b> (optional), chosen from a short list such as "Build strength" or "Sleep".</li>
+<li><b>What you'd like to work on, how you'd like to meet, and your budget</b> (optional), chosen from short lists in our intake quiz or in My account. If you take the quiz without creating an account, your answers stay in your browser and are not saved; we only add them to anonymous totals.</li>
 <li><b>Booking requests:</b> the practitioner, service, format, date and time, price, status, and any note you choose to add.</li>
 </ul>
 <p><b>From practitioners</b></p>
@@ -1858,6 +2055,7 @@ function privacyPage(){ return legalWrap('Privacy Policy', `${updated()}${review
 <ul>
 <li><b>Privacy requests:</b> your email, the type of request and any details you give us.</li>
 <li><b>Anonymous statistics:</b> daily totals of how many times each practitioner's profile was viewed, appeared in search results, and received booking requests.</li>
+<li><b>Anonymous quiz totals:</b> daily totals of how many people pick each quiz answer, with nothing that identifies who answered.</li>
 <li><b>Anonymous site usage:</b> daily totals of which buttons and links are clicked on public pages, which search filters are chosen (service, city, price), searches that found no one, and how many visits reach each step toward booking or sign-up. We use these to improve the site.</li>
 <li><b>Technical data:</b> our hosting and database providers automatically log technical information such as IP address, browser type and the time of each request, to run and secure their services.</li>
 </ul>
@@ -2048,7 +2246,7 @@ function openAuth(mode, note){
   document.getElementById(mode==='login'?'au-email':'au-name').focus();
 }
 function syncCityField(){
-  const w=document.getElementById('au-city-wrap'); if(w) w.hidden = authMode==='login' || document.getElementById('au-role').value!=='client';
+  const w=document.getElementById('au-city-wrap'); if(w) w.hidden = authMode==='login' || document.getElementById('au-role').value!=='client' || !!(quizForSignup && quizForSignup.location);
 }
 document.getElementById('au-role').addEventListener('change', syncCityField);
 function renderAuthUI(){
@@ -2083,10 +2281,11 @@ document.getElementById('authForm').addEventListener('submit',async e=>{
   const btn=document.getElementById('authSubmit'); btn.disabled=true;
   const res = authMode==='login'
     ? await sb.auth.signInWithPassword({email, password:pass})
-    : await sb.auth.signUp({email, password:pass, options:{data:{full_name:name, role, age_confirmed:true, terms_version:TERMS_VERSION, location:(role==='client' && document.getElementById('au-city').value)||''}, emailRedirectTo: location.origin+location.pathname+(role==='professional'?'#dashboard':'')}});
+    : await sb.auth.signUp({email, password:pass, options:{data:{full_name:name, role, age_confirmed:true, terms_version:TERMS_VERSION, location:(role==='client' && (document.getElementById('au-city').value || (quizForSignup&&quizForSignup.location)))||'',
+        ...(role==='client' && quizForSignup ? {interests:quizForSignup.interests, preferred_mode:quizForSignup.preferred_mode, budget:quizForSignup.budget} : {})}, emailRedirectTo: location.origin+location.pathname+(role==='professional'?'#dashboard':'')}});
   btn.disabled=false;
   if(res.error) return say(authMode==='login' ? 'That email and password don\'t match. Try again.' : res.error.message);
-  if(authMode==='signup'){ track('funnel', 'S2 Account created'); flushEvents(); }
+  if(authMode==='signup'){ track('funnel', 'S2 Account created'); if(quizForSignup){ track('funnel','Q3 Created account from quiz'); quizForSignup=null; } flushEvents(); }
   if(authMode==='signup' && !res.data.session) return say('Check your email to confirm your account, then log in.', true);
   dlg.close();
   if(isPro() && !/^#(dashboard|pro-)/.test(location.hash)) location.hash='#dashboard';
@@ -2098,8 +2297,9 @@ async function refreshUser(session){
   renderAuthUI();
   myCity='';
   if(user && !isPro()) sb.from('profiles').select('location').eq('id', user.id).maybeSingle().then(({data})=>{ myCity=(data&&data.location)||''; },()=>{});
-  if(was !== !!user && /^#(account|dashboard)/.test(location.hash)) route();
+  if(was !== !!user && (/^#(account|dashboard|home)?$/.test(location.hash) || /^#(account|dashboard)/.test(location.hash)) && !(user && quizForSignup)) route();
   if(!was && user){
+    saveQuizToProfile();
     resumePendingBooking();
     if(isPro() && (!location.hash || /^#(home|access_token|$)/.test(location.hash))) location.hash='#dashboard';
   }
@@ -2178,7 +2378,9 @@ function route(){
   renderTabbar(); markCats();
 }
 function bindHome(){
-  document.getElementById('heroSearch').addEventListener('submit',e=>{
+  bindQuiz();
+  const hs=document.getElementById('heroSearch'); if(!hs) return;
+  hs.addEventListener('submit',e=>{
     e.preventDefault();
     const s=document.getElementById('hsSvc').value;
     pendingLoc=document.getElementById('hsWhere').value;
