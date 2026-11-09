@@ -1,0 +1,50 @@
+:root{--red:#830F18;--red-h:#6B0B13;--green:#244623;--green-h:#1A3419;--green-tint:#EAF2E8;--ink:#1B1A19;--ink-2:#3C3D39;--muted:#565A53;--line:#E4E5E0;--bg:#fff;--bg-alt:#F6F7F3;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;font:17px/1.65 var(--sans);color:var(--ink);background:var(--bg)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--green);text-underline-offset:3px}
+a:hover{color:var(--red)}
+:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;background:#fff;padding:8px 12px;z-index:9}
+.top{border-bottom:1px solid var(--line);background:#fff}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;flex-wrap:wrap;padding-block:10px}
+.brand{display:flex;align-items:center;gap:8px}
+.brand .word{width:161px}
+.top nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.top nav a{font-weight:600;color:var(--ink);text-decoration:none}
+.top nav a:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:46px;padding:8px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;font-size:16px;line-height:1.2}
+.top nav a.btn-red,.btn-red{background:var(--red);color:#fff}.btn-red:hover,.top nav a.btn-red:hover{background:var(--red-h);color:#fff}
+.btn-green{background:var(--green);color:#fff}.btn-green:hover{background:var(--green-h);color:#fff}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}.btn-ghost:hover{background:var(--ink);color:#fff}
+.crumbs{font-size:14px;color:var(--muted);margin:24px 0 8px}
+.crumbs a{color:var(--muted)}
+h1{font:600 clamp(32px,5vw,50px)/1.1 var(--serif);margin:8px 0 16px;color:var(--ink)}
+h2{font:600 clamp(22px,2.6vw,28px)/1.2 var(--serif);margin:0 0 10px}
+h3{font:700 18px/1.3 var(--sans);margin:0 0 6px}
+.lead{font-size:clamp(18px,2vw,20px);color:var(--ink-2);max-width:760px;margin:0 0 20px}
+.note{background:#FBEDEC;border-left:4px solid var(--red);padding:12px 16px;border-radius:8px;max-width:760px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 36px}
+section{margin:0 0 36px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 40px}
+ul{padding-left:22px;margin:0}
+li{margin:4px 0}
+.band{background:var(--green-tint);border-radius:18px;padding:28px}
+.band p{max-width:760px}
+.links{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.links a{display:inline-block;padding:8px 14px;border:1.5px solid var(--line);border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;color:var(--ink)}
+.links a:hover{border-color:var(--ink);color:var(--ink)}
+.cards{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:0}
+.card h3 a{color:var(--ink);text-decoration:none}.card h3 a:hover{color:var(--red)}
+.card p{margin:0 0 8px;color:var(--ink-2);font-size:16px}.card .more{margin:0;font-weight:600;font-size:15px}
+footer{background:var(--bg-alt);border-top:1px solid var(--line);margin-top:48px;padding:40px 0 28px;font-size:15px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+footer h2{font:700 14px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
+footer ul{list-style:none;padding:0}
+footer a{color:var(--ink)}
+footer p{color:var(--ink-2);margin:10px 0 0}
+.fine{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:24px}
+@media (max-width:760px){.grid,footer .cols{grid-template-columns:1fr}.band{padding:20px}.bar{flex-wrap:nowrap;min-height:60px}.brand .word{width:120px}.brand img:first-child{width:32px}.top nav a:not(.btn){display:none}.top nav .btn{min-height:40px;padding:6px 16px;font-size:15px}}
