@@ -4,16 +4,9 @@
   --ink:#1B1A19;--ink-2:#3C3D39;--muted:#565A53;--line:#E4E5E0;--bg:#fff;--bg-alt:#F6F7F3;--on-brand:#fff;
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  color-scheme:light dark;
+  color-scheme:light;
   accent-color:var(--green-text);
   scrollbar-color:var(--muted) var(--bg-alt);
-}
-@media (prefers-color-scheme:dark){
-  :root{
-    --red:#A3343A;--red-h:#B8434A;--red-tint:#3A1B1E;--red-text:#F2959A;
-    --green:#3B6A37;--green-h:#47803F;--green-tint:#1F2F1E;--green-text:#93C98B;
-    --ink:#ECEDE7;--ink-2:#CDD0C7;--muted:#A4A99E;--line:#343931;--bg:#141613;--bg-alt:#1B1E1A;
-  }
 }
 *{box-sizing:border-box}
 body{margin:0;font:1.0625rem/1.65 var(--sans);color:var(--ink);background:var(--bg)}

@@ -4,12 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="text-scale" content="scale">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <title>Show &amp; Well | Find Wellness Professionals in Minneapolis–St. Paul</title>
 <meta name="description" content="Find personal trainers, yoga teachers, therapists, dietitians, massage therapists and coaches across Minneapolis–St. Paul or online. Take a 4-question quiz to find your match. Free for clients.">
 <link rel="canonical" href="https://showandwell.com/">
-<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141613" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#244623">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Show &amp; Well">
 <meta property="og:title" content="Show &amp; Well | Find wellness pros in the Twin Cities">
@@ -41,19 +40,9 @@
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --radius:14px; --wrap:1200px;
   --ease:cubic-bezier(.2,.7,.2,1);
-  color-scheme:light dark;
+  color-scheme:light;
   accent-color:var(--green-text);
   scrollbar-color:var(--muted) var(--bg-alt);
-}
-@media (prefers-color-scheme:dark){
-  :root{
-    --red:var(--red-d); --red-hover:var(--red-hover-d); --red-tint:#3A1B1E; --red-text:#F2959A;
-    --green:var(--green-d); --green-hover:var(--green-hover-d); --green-tint:#1F2F1E; --green-text:#93C98B;
-    --ink:#ECEDE7; --ink-2:#CDD0C7; --muted:#A4A99E;
-    --line:#343931; --bg:#141613; --bg-alt:#1B1E1A; --surface:#1F231E;
-    --star:#E3AE52; --error:#F2958F; --error-tint:#3A1B1E;
-    --shadow:rgba(0,0,0,.6); --backdrop:rgba(0,0,0,.65);
-  }
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -689,8 +678,8 @@ dialog#authDlg::backdrop{overflow:hidden;overscroll-behavior:contain}
 <header class="site-header" data-zone="Header">
   <div class="wrap hdr">
     <a class="brand" href="#home" aria-label="Show &amp; Well home">
-      <picture><source srcset="/assets/mark-dark.png" media="(prefers-color-scheme: dark)"><img class=" mark"src="/assets/mark.png" alt="" width="240" height="226"></picture>
-      <picture><source srcset="/assets/wordmark-dark.png" media="(prefers-color-scheme: dark)"><img class=" word"src="/assets/wordmark.png" alt="Show &amp; Well" width="695" height="125"></picture>
+      <img class=" mark"src="/assets/mark.png" alt="" width="240" height="226">
+      <img class=" word"src="/assets/wordmark.png" alt="Show &amp; Well" width="695" height="125">
     </a>
     <a class="util" href="#join"><svg class="icon"><use href="#i-users"/></svg>For wellness professionals</a>
     <nav class="nav" id="nav" aria-label="Types of wellness">
@@ -789,7 +778,7 @@ dialog#authDlg::backdrop{overflow:hidden;overscroll-behavior:contain}
   <div class="wrap">
     <div class="foot">
       <div>
-        <picture><source srcset="/assets/wordmark-dark.png" media="(prefers-color-scheme: dark)"><img src="/assets/wordmark.png" alt="Show &amp; Well" width="695" height="125" style="width:200px"></picture>
+        <img src="/assets/wordmark.png" alt="Show &amp; Well" width="695" height="125" style="width:200px">
         <p class="tag">The right trainer<i aria-hidden="true">.</i> The right fit<i aria-hidden="true">.</i> Hassle free<i aria-hidden="true">.</i></p>
         <p style="color:var(--muted);margin-top:14px;max-width:360px;font-size:15px">A marketplace for independent personal trainers, yoga teachers, dietitians, counselors and bodyworkers, in person across the Twin Cities metro and online. Not a healthcare provider.</p>
       </div>
